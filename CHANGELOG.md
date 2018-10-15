@@ -1,18 +1,156 @@
 # Python Buildpack Changelog
 
+# 140 (2018-10-09)
+
+Add support for detecting SLUGIFY_USES_TEXT_UNIDECODE, which is required to
+install Apache Airflow version 1.10 or higher.
+
+# 139 (2018-10-08)
+
+Improvements to Python install messaging
+
+# 138 (2018-08-01)
+
+Use stack image SQLite3 instead of vendoring
+
+# 137 (2018-07-17)
+
+Prevent 3.7.0 from appearing as unsupported in buildpack messaging.
+
+# 136 (2018-06-28)
+
+Upgrade to 3.6.6 and support 3.7.0 on all runtimes.
+
+# 135 (2018-05-29)
+
+Upgrade Pipenv to v2018.5.18.
+
+# 134 (2018-05-02)
+
+Default to 3.6.5, bugfixes.
+
+# 133
+
+Fixes for Pip 10 release.
+
+# 132
+
+Improve pip installation, with the release of v9.0.2.
+
+# 131
+
+Fix bug with pip.
+
+# 130
+
+Better upgrade strategy for pip.
+
+# 129
+
+Don't upgrade pip (from v128).
+
+# 128
+
+Upgrade pip, pin to Pipenv v11.8.2.
+
+# 127
+
+Pin to Pipenv v11.7.1.
+
+# 126
+
+Bugfixes.
+
+# 125
+
+Bugfixes.
+
+# 124
+
+Update buildpack to automatically install `[dev-packages]` during Heroku CI Pipenv builds.
+
+- Skip installs if Pipfile.lock hasn't changed, and uninstall stale dependencies with Pipenv.
+- Set `PYTHONPATH` during collectstatic runs.
+- No longer warn if there is no `Procfile`.
+- Update Pipenv's "3.6" runtime specifier to point to "3.6.4".
+
+# 123
+
+Update gunicorn `init.d` script to allow overrides.
+
+# 122
+
+Update default Python to v3.6.4.
+
+# 121
+
+Update default Python to v3.6.3.
+
+# 120
+
+Use `$ pipenv --deploy`.
+
+# 119
+
+Improvements to Pipenv support, warning on unsupported Python versions.
+
+- We now warn when a user is not using latest 2.x or 3.x Python.
+- Heroku now supports `[requires]` `python_full_version` in addition to `python_version`.
+
+# 118
+
+Improvements to Pipenv support.
+
+# 117
+
+Bug fix.
+
+# 116
+
+Vendoring improvements.
+
+- Geos libraries should work on Heroku-16 now.
+- The libffi/libmemcached vendoring step is now skipped on Heroku-16 (since they are installed in the base image).
+
+# 115
+
+Revert a pull request.
+
+- No longer using `sub_env` for `pip install` step.
+
+# 114
+
+- Bugfixes.
+
+Blacklisting `PYTHONHOME` and `PYTHONPATH` for older apps. Upgrades to nltk support.
+
+# 113
+
+Updates to Pipenv support.
+
+# 112
+
+Bugfix.
+
+- Fixed grep output bug.
+
+# 111
+
+Linting, bugfixes.
+
 # 110
+
+Update default Python to 3.6.2.
+
+# 109
 
 Update Default Python to 3.6.1, bugfixes.
 
 - Fixed automatic pip uninstall of dependencies removed from requirements.txt.
 
-# 109
-
-Fix output for collectstatic step.
-
 # 108
 
-Updated setuptools.
+Fix output for collectstatic step.
 
 # 107
 
